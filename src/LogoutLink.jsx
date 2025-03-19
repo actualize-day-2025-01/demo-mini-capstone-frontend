@@ -11,7 +11,7 @@ export function LogoutLink() {
   };
 
   return (
-    <a href="#" onClick={handleClick}>
+    <a href="#" onClick={handleClick} className="p-3 mx-1 rounded hover:bg-gray-500">
       Logout
     </a>
   );

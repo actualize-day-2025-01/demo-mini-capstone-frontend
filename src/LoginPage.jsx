@@ -24,7 +24,7 @@ export function LoginPage() {
 
   return (
     <div id="login">
-      <h1>Login</h1>
+      <h1 className="text-3xl font-bold">Login</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
@@ -32,12 +32,14 @@ export function LoginPage() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Email: <input name="email" type="email" />
+          Email: <input name="email" type="email" className="mt-1 block w-full rounded-md border-gray-300" />
         </div>
         <div>
-          Password: <input name="password" type="password" />
+          Password: <input name="password" type="password" className="mt-1 block w-full rounded-md border-gray-300" />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="rounded border border-gray-300 p-2 hover:bg-gray-100 mt-3">
+          Login
+        </button>
       </form>
     </div>
   );

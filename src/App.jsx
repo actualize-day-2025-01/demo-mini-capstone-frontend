@@ -10,11 +10,13 @@ axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <SignupPage />
-      <LoginPage />
-      <ProductsPage />
+      <div className="container mx-auto flex-auto p-4">
+        <SignupPage />
+        <LoginPage />
+        <ProductsPage />
+      </div>
       <Footer />
     </div>
   );
