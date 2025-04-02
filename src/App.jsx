@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { ProductsPage } from "./ProductsPage";
+import { CartedProductsPage } from "./CartedProductsPage";
 import { Footer } from "./Footer";
 
 axios.defaults.baseURL = "http://localhost:3000";
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <ProductsPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartedProductsPage />,
       },
       {
         path: "/signup",

@@ -8,6 +8,9 @@ export function Header() {
         <Link to="/" className="p-3 mx-1 rounded hover:bg-gray-500">
           Home
         </Link>
+        <Link to="/cart" className="p-3 mx-1 rounded hover:bg-gray-500">
+          Shopping Cart
+        </Link>
         <Link to="/signup" className="p-3 mx-1 rounded hover:bg-gray-500">
           Signup
         </Link>
