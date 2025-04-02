@@ -1,4 +1,5 @@
 import axios from "axios";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./Header";
 import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
@@ -8,18 +9,36 @@ import { Footer } from "./Footer";
 axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.withCredentials = true;
 
-function App() {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
-      <div className="container mx-auto flex-auto p-4">
-        <SignupPage />
-        <LoginPage />
-        <ProductsPage />
+const router = createBrowserRouter([
+  {
+    element: (
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <div className="container mx-auto flex-auto p-4">
+          <Outlet />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    ),
+    children: [
+      {
+        path: "/",
+        element: <ProductsPage />,
+      },
+      {
+        path: "/signup",
+        element: <SignupPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
