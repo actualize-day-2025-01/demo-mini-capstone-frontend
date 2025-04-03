@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function ProductsIndex({ products }) {
   return (
     <div>
@@ -13,6 +15,9 @@ export function ProductsIndex({ products }) {
               <h2 className="text-2xl font-bold">{product.name}</h2>
               <p>Price: {product.price}</p>
             </div>
+            <Link className="rounded border border-gray-300 p-2 hover:bg-gray-100" to={`/products/${product.id}`}>
+              More info
+            </Link>
           </div>
         ))}
       </div>

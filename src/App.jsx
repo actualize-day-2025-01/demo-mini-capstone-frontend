@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { ProductsPage } from "./ProductsPage";
+import { ProductsShowPage } from "./ProductsShowPage";
 import { CartedProductsPage } from "./CartedProductsPage";
 import { Footer } from "./Footer";
 
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <ProductsPage />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductsShowPage />,
+        loader: ({ params }) => axios.get(`/products/${params.id}.json`).then((response) => response.data),
       },
       {
         path: "/cart",
