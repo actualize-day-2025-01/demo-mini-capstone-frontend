@@ -8,7 +8,8 @@ import { ProductsShowPage } from "./ProductsShowPage";
 import { CartedProductsPage } from "./CartedProductsPage";
 import { Footer } from "./Footer";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://demo-mini-capstone-api-5zlt.onrender.com";
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
