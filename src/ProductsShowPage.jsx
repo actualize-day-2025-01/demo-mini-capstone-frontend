@@ -2,6 +2,7 @@ import axios from "axios";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 import { ProductsShow } from "./ProductsShow";
+import { CartedProductsNew } from "./CartedProductsNew";
 
 export function ProductsShowPage() {
   const product = useLoaderData();
@@ -21,9 +22,14 @@ export function ProductsShowPage() {
     });
   };
 
+  const handleCartCreate = () => {
+    console.log("handleCartCreate");
+  };
+
   return (
     <div>
       <ProductsShow product={product} onUpdate={handleUpdate} onDestroy={handleDestroy} />
+      <CartedProductsNew onCartCreate={handleCartCreate} product={product} />
     </div>
   );
 }
