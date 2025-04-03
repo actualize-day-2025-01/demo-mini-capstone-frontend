@@ -35,6 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartedProductsPage />,
+        loader: () => axios.get("/carted_products.json").then((response) => response.data),
       },
       {
         path: "/signup",
